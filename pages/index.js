@@ -1,20 +1,22 @@
-import QuizBackground from '../components/QuizBackground';
-import QuizContainer from '../components/QuizContainer';
-import Widget from '../components/Widget';
-import Footer from '../components/Footer';
-import GitHubCorner from '../components/GitHubCorner';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
+import QuizBackground from '../src/components/QuizBackground';
+import QuizContainer from '../src/components/QuizContainer';
+import QuizLogo from '../src/components/QuizLogo';
+import Widget from '../src/components/Widget';
 import db from '../db.json';
 
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>CSS is Awesome</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Lorem ipsum</p>
+            <p>lorem ipsum dolor sit amet..</p>
           </Widget.Content>
         </Widget>
         <Widget>
@@ -22,7 +24,7 @@ export default function Home() {
             <h1>Quizes da Galera</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Lorem ipsum</p>
+            <p>lorem ipsum dolor sit amet..</p>
           </Widget.Content>
         </Widget>
         <Footer />
