@@ -47,7 +47,7 @@ const SVGWrapper = styled.svg`
   }
 `;
 
-function GitHubCorner({ projectUrl }) {
+export default function GitHubCorner({ projectUrl }) {
   return (
     <Wrapper>
       <a href={projectUrl} target="_blank" rel="noreferrer">
@@ -79,5 +79,3 @@ function GitHubCorner({ projectUrl }) {
 GitHubCorner.propTypes = {
   projectUrl: PropTypes.string.isRequired,
 };
-
-export default GitHubCorner;

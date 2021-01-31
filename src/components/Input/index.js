@@ -14,7 +14,7 @@ const InputBase = styled.input`
   font-size: 14px;
 `;
 
-function Input({ onChange, placeholder, ...props }) {
+export default function Input({ onChange, placeholder, ...props }) {
   return (
     <div>
       <InputBase
@@ -37,5 +37,3 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
 };
-
-export default Input;

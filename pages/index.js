@@ -11,7 +11,7 @@ import QuizLogo from '../src/components/QuizLogo';
 import Widget from '../src/components/Widget';
 import db from '../db.json';
 
-export default function Home() {
+export default function HomePage() {
   const [name, setName] = useState('');
   const router = useRouter();
 
