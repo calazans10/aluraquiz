@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -45,7 +47,7 @@ const SVGWrapper = styled.svg`
   }
 `;
 
-export default function GitHubCorner({ projectUrl }) {
+function GitHubCorner({ projectUrl }) {
   return (
     <Wrapper>
       <a href={projectUrl} target="_blank" rel="noreferrer">
@@ -73,3 +75,9 @@ export default function GitHubCorner({ projectUrl }) {
     </Wrapper>
   );
 }
+
+GitHubCorner.propTypes = {
+  projectUrl: PropTypes.string.isRequired,
+};
+
+export default GitHubCorner;
