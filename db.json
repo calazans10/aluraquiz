@@ -27,7 +27,10 @@
     }
   ],
   "external": [
-    ""
+    "https://aluraquiz-css.omariosouto.vercel.app/",
+    "https://aluraquiz-devsoutinho.omariosouto.vercel.app/",
+    "https://avengersquiz.penadev.vercel.app/",
+    "https://poderosochefaoquiz.admsilva.vercel.app/"
   ],
   "theme": {
     "colors": {

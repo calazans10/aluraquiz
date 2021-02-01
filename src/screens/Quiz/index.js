@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import AlternativesForm from '../src/components/AlternativesForm';
-import Button from '../src/components/Button';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizLogo from '../src/components/QuizLogo';
-import Widget from '../src/components/Widget';
-import db from '../db.json';
+import AlternativesForm from '../../components/AlternativesForm';
+import BackLinkArrow from '../../components/BackLinkArrow';
+import Button from '../../components/Button';
+import QuizBackground from '../../components/QuizBackground';
+import QuizContainer from '../../components/QuizContainer';
+import QuizLogo from '../../components/QuizLogo';
+import Widget from '../../components/Widget';
 
 function LoadingWidget() {
   return (
@@ -52,6 +52,7 @@ function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit, onA
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </Widget.Header>
       <img
@@ -128,13 +129,15 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 
-export default function QuizPage() {
+// eslint-disable-next-line react/prop-types
+export default function QuizScreen({ questions, backgroundImage }) {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [results, setResults] = useState([]);
 
-  const totalQuestions = db.questions.length;
-  const question = db.questions[questionIndex];
+  // eslint-disable-next-line react/prop-types
+  const totalQuestions = questions.length;
+  const question = questions[questionIndex];
 
   useEffect(() => {
     setTimeout(() => {
@@ -157,7 +160,8 @@ export default function QuizPage() {
   };
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    // eslint-disable-next-line react/prop-types
+    <QuizBackground backgroundImage={backgroundImage}>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.QUIZ && (
